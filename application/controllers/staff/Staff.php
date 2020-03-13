@@ -12,17 +12,18 @@ class Staff extends BD_Controller {
 		$this->load->view('staff/layout/head');
 		$this->load->view('staff/layout/header');
 		$this->load->view('staff/layout/left-menu');
-		$this->load->view('staff/staffhome/content');
+		$this->load->view('staff/competition/content');
 		$this->load->view('staff/layout/footer');
 		$this->load->view('staff/layout/foot');
 	}
+
 	public function createCompetation()
 	{
 		$this->load->view('staff/layout/head');
 		$this->load->view('staff/layout/header');
 		$this->load->view('staff/layout/left-menu');
-		$this->load->view('staff/createCompetition/content');
-		$this->load->view('staff/createCompetition/script');
+		$this->load->view('staff/competition/create/content');
+		$this->load->view('staff/competition/create/script');
 		$this->load->view('staff/layout/footer');
 		$this->load->view('staff/layout/foot');
 	}
