@@ -22,7 +22,7 @@ class Staff extends BD_Controller {
 		$this->load->view('staff/layout/header');
 		$this->load->view('staff/layout/left-menu');
 		$this->load->view('staff/createCompetition/content');
-		$this->load->view('staff/createCompetition/Competition');
+		$this->load->view('staff/createCompetition/script');
 		$this->load->view('staff/layout/footer');
 		$this->load->view('staff/layout/foot');
 	}

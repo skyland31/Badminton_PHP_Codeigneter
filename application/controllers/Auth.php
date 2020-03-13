@@ -26,6 +26,7 @@ class Auth extends CI_Controller {
                     'username' => $val->username,
                     'isLoggedIn' => true,
                 );
+                
 
                 $this->session->set_userdata($sess_array);
 
