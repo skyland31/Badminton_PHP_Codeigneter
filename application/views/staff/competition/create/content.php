@@ -24,26 +24,34 @@
               <div class="box-body">
                 <div class="col-lg-12">
                   <label for="competition_name">ชื่อการแข่งขัน</label>
-                  <input type="text" class="form-control" id="competition_name" placeholder="ชื่อรายการการแข่งขัน">
+                  <input type="text" class="form-control" id="name" name="name" placeholder="ชื่อรายการการแข่งขัน">
                 </div>
                 <div class="col-lg-6">
-                  <label for="date_competition">วันที่เริ่มการแข่งขัน</label>
-                    <input type="text" class="form-control" id="date_first_competition" placeholder="วว/ดด/ปปปป">
+                  <label for="compet_start">วันที่เริ่มการแข่งขัน(ตัวอย่าง 01/01/2556)</label>
+                    <input type="text" class="form-control" name="compet_start" id="compet_start" placeholder="วว/ดด/ปปปป">
                 </div>
                 <div class="col-lg-6">
-                  <label for="date_competition">วันที่สุดการแข่งขัน</label>
-                    <input type="text" class="form-control" id="date_end_competition" placeholder="วว/ดด/ปปปป">
+                  <label for="compet_end">วันที่สุดการแข่งขัน(ตัวอย่าง 01/01/2556)</label>
+                    <input type="text" class="form-control" name="compet_end" id="compet_end" placeholder="วว/ดด/ปปปป">
+                </div>
+                <div class="col-lg-12">
+                  <label for="palce">สถานที่แข่งขัน</label>
+                    <input type="text" class="form-control" name="palce" id="palce" placeholder="สถานที่แข่ง">
+                </div> 
+                <div class="col-lg-6">
+                  <label for="start">วันที่เริ่มรับสมัคร(ตัวอย่าง 01/01/2556)</label>
+                  <input type="text" class="form-control" id="start" placeholder="วว/ดด/ปปปป">
                 </div>
                 <div class="col-lg-6">
-                  <label for="location">สถานที่แข่งขัน</label>
-                    <input type="text" class="form-control" id="location" placeholder="สถานที่แข่ง">
-                </div>       
+                  <label for="end">วันที่สิ้นสุดรับสมัคร(ตัวอย่าง 01/02/2556)</label>
+                  <input type="text" class="form-control" id="end" placeholder="วว/ดด/ปปปป">
+                </div>      
                 <div class="col-lg-6">
-                  <label for="startPay">วันที่เริ่มจ่ายเงิน(01/01/2556)</label>
+                  <label for="startPay">วันที่เริ่มจ่ายเงิน(ตัวอย่าง 01/01/2556)</label>
                   <input type="text" class="form-control" id="startPay" placeholder="วว/ดด/ปปปป">
                 </div>
                 <div class="col-lg-6">
-                  <label for="endPay">วันที่เริ่มจ่ายเงิน(01/02/2556)</label>
+                  <label for="endPay">วันที่สิ้นสุดจ่ายเงิน(ตัวอย่าง 01/02/2556)</label>
                   <input type="text" class="form-control" id="endPay" placeholder="วว/ดด/ปปปป">
                 </div>
                 <div class="col-lg-6">
@@ -56,15 +64,33 @@
                 </div>
                 <div class="col-lg-12">
                   <label>รายละเอียดการแข่งขัน</label>
-                  <textarea rows="4" cols="85" name="comment" form="usrform" placeholder="รายละเอียดเพิ่มเติม...."></textarea>
+                  <textarea rows="4" cols="85" id="detail" name="detail" form="usrform" placeholder="รายละเอียดเพิ่มเติม...."></textarea>
                 </div>
-                <div class="col-lg-12">
+                <div class="col-lg-6">
                   <label>รุ่น</label>
-                  <select class="form-control">
-                    <option>รุ่นเยาวชน</option>
-                    <option>รุ่นประชาชน</option>
+                  <select class="form-control" id="compet_type" name="compet_type">
+                    <option value="none">--select--</option>
+                    <option value="youth">รุ่นเยาวชน</option>
+                    <option value="people">รุ่นประชาชน</option>
                   </select>
                 </div>
+                <div class="col-lg-6" id="gen">
+                  <label>อายุ</label>
+                  <select class="form-control" id="compet_gen" name="compet_gen">
+                    <option value="none">--select--</option>
+                      <!-- <option value = "U9">U9</option>
+                      <option value = "U11">U11</option>
+                      <option value = "U13">U13</option>
+                      <option value = "U15">U15</option>
+                      <option value = "U17">U17</option> -->
+                      <!-- <option value = "N">N</option>
+                      <option value = "S-">S-</option>
+                      <option value = "S+">S+</option>
+                      <option value = "P-">P-</option>
+                      <option value = "P+C">P+C</option> -->
+                  </select>
+                </div>
+                
                 <!-- <div class="form-group">
                   <label for="exampleInputFile">File input</label>
                   <input type="file" id="exampleInputFile">
