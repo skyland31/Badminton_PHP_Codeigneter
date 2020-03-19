@@ -55,6 +55,8 @@
         e.preventDefault();
         $("#startPay").val($("#start").val());
       });
+
+
       function option(){
         if(compet_type == "youth"){
           $("#compet_gen").empty();
@@ -68,6 +70,9 @@
           $("#gen").hide();
         }
       }
+
+
+      
       
     </script>
   </body>

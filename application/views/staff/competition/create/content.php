@@ -45,27 +45,20 @@
                 <div class="col-lg-6">
                   <label for="end">วันที่สิ้นสุดรับสมัคร(ตัวอย่าง 01/02/2556)</label>
                   <input type="text" class="form-control" id="end" placeholder="วว/ดด/ปปปป">
+                </div>
+                <div class="col-lg-6">
+                  <label for="startPay">ค่าสมัคร(ตัวอย่าง 500 บาท)</label>
+                  <input type="text" class="form-control" id="payCost" placeholder="จำนวนเงิน">
                 </div>      
                 <div class="col-lg-6">
-                  <label for="startPay">วันที่เริ่มจ่ายเงิน(ตัวอย่าง 01/01/2556)</label>
-                  <input type="text" class="form-control" id="startPay" placeholder="วว/ดด/ปปปป">
-                </div>
-                <div class="col-lg-6">
-                  <label for="endPay">วันที่สิ้นสุดจ่ายเงิน(ตัวอย่าง 01/02/2556)</label>
-                  <input type="text" class="form-control" id="endPay" placeholder="วว/ดด/ปปปป">
-                </div>
-                <div class="col-lg-6">
-                  <label for="telephone">โทร</label>
-                  <input type="text" class="form-control" id="telephone" placeholder="โทร">
-                </div>
-                <div class="col-lg-6">
-                  <label for="line_id">line ID</label>
-                  <input type="text" class="form-control" id="line_id" placeholder="id">
+                  <label for="startPay">วันที่สิ้นสุดจ่ายเงิน(ตัวอย่าง 01/02/2556)</label>
+                  <input type="text" class="form-control" id="endtPay" placeholder="วว/ดด/ปปปป">
                 </div>
                 <div class="col-lg-12">
                   <label>รายละเอียดการแข่งขัน</label>
                   <textarea rows="4" cols="85" id="detail" name="detail" form="usrform" placeholder="รายละเอียดเพิ่มเติม...."></textarea>
                 </div>
+
                 <div class="col-lg-6">
                   <label>รุ่น</label>
                   <select class="form-control" id="compet_type" name="compet_type">
@@ -74,6 +67,7 @@
                     <option value="people">รุ่นประชาชน</option>
                   </select>
                 </div>
+
                 <div class="col-lg-6" id="gen">
                   <label>อายุ</label>
                   <select class="form-control" id="compet_gen" name="compet_gen">
