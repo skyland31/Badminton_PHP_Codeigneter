@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Staff extends BD_Controller {
+class Competition extends BD_Controller {
 	public function __construct()
     {
         parent::__construct();
@@ -17,7 +17,7 @@ class Staff extends BD_Controller {
 		$this->load->view('staff/layout/foot');
 	}
 
-	public function createCompetation()
+	public function createCompetition()
 	{
 		$this->load->view('staff/layout/head');
 		$this->load->view('staff/layout/header');
