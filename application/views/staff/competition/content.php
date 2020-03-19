@@ -58,7 +58,7 @@
         <div class="col-md-6">
           <div class="box">
             <div class="box-header border-box-bottom" id="compet-name">
-              <h3>Walailak's Day</h3>
+              <h3>Walailak's Day2</h3>
             </div>
             <div class="box-body" id="compet-detail">
               <strong> เปิดรับ : </strong>
