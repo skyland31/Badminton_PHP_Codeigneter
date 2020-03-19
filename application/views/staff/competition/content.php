@@ -47,7 +47,7 @@
               <strong> สิ้นสุดจ่ายค่าสมัคร : </strong><p class="detail" id="pay-end">25/03/2020</p>
               <br><br>
               <a href="#" type="button" class="btn btn-primary">รายละเอียด</a>
-              <a href="#" type="button" class="btn btn-warning">แก้ไข</a>
+              <a href="<?php echo base_url('staff/Competition/editCompetition') ?>" type="button" class="btn btn-warning">แก้ไข</a>
               <a href="#" type="button" class="btn btn-danger">ลบ</a>
             </div>
             <div class="box-footer border-box-top">
@@ -88,7 +88,7 @@
               <strong> สิ้นสุดจ่ายค่าสมัคร : </strong><p class="detail" id="pay-end">25/03/2020</p>
               <br><br>
               <a href="#" type="button" class="btn btn-primary">รายละเอียด</a>
-              <a href="#" type="button" class="btn btn-warning">แก้ไข</a>
+              <a href="<?php echo base_url('staff/Competition/editCompetition') ?>" type="button" class="btn btn-warning">แก้ไข</a>
               <a href="#" type="button" class="btn btn-danger">ลบ</a>
             </div>
             <div class="box-footer border-box-top">
