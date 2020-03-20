@@ -43,30 +43,30 @@
               <br>
               <div class="row">
                 <div class="col-md-6">
-                  <label for="start">วันที่เริ่มรับสมัคร<sup class="error">*</sup><small>(01/01/2556)</small></label>
-                  <input type="text" class="form-control error" id="start" placeholder="วว/ดด/ปปปป" required>
+                  <label for="start">วันที่เปิดรับสมัคร<sup class="error">*</sup><small>(01/01/2556)</small></label>
+                  <input type="text" class="form-control error" name="start" id="start" placeholder="วว/ดด/ปปปป" required>
                 </div>
                 <div class="col-md-6">
-                  <label for="end">วันที่สิ้นสุดรับสมัคร<sup class="error">*</sup><small>(01/02/2556)</small></label>
-                  <input type="text" class="form-control error" id="end" placeholder="วว/ดด/ปปปป" required>
+                  <label for="end">วันที่ปิดรับสมัคร<sup class="error">*</sup><small>(01/02/2556)</small></label>
+                  <input type="text" class="form-control error" name="end" id="end" placeholder="วว/ดด/ปปปป" required>
                 </div>
               </div>
               <br>
               <div class="row">
                 <div class="col-md-6">
                   <label for="startPay">ค่าสมัคร<sup class="error">*</sup><small>(500)</small></label>
-                  <input type="text" class="form-control error" id="payCost" placeholder="จำนวนเงิน" required>
+                  <input type="text" class="form-control error" name="payCost" id="payCost" placeholder="จำนวนเงิน" required>
                 </div>      
               <div class="col-md-6">
                   <label for="startPay">วันที่สิ้นสุดจ่ายเงิน<sup class="error">*</sup><small>(01/02/2556)</small></label>
-                  <input type="text" class="form-control error" id="endtPay" placeholder="วว/ดด/ปปปป" required>
+                  <input type="text" class="form-control error" name="endPay" id="endPay" placeholder="วว/ดด/ปปปป" required>
                 </div>
               </div>
               <br>
               <div class="row">
                 <div class="col-md-12">
                   <label>รายละเอียดการแข่งขัน</label>
-                  <textarea rows="4" class="form-control" id="detail" name="detail" form="usrform" placeholder="รายละเอียดเพิ่มเติม...."></textarea>
+                  <textarea rows="4" class="form-control error" id="detail" name="detail" form="usrform" placeholder="รายละเอียดเพิ่มเติม...."></textarea>
                 </div>
               </div>
               <br>
@@ -114,7 +114,7 @@
               <div class="box-footer">
                 <div class="row pull-right">
                   <div class="col-md-12">
-                    <a href="<?php echo base_url('staff/Competition/index') ?>" type="button" class="btn btn-warning">ยกเลิก</a>
+                    <a href="<?php echo base_url('staff/Competition/index') ?>" type="button" class="btn btn-default">ยกเลิก</a>
                     <button type="submit" class="btn btn-primary">บันทึก</button>
                   </div>
                 </div>

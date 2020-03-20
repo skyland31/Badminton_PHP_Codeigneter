@@ -220,5 +220,9 @@
 <script src="<?php echo base_url(); ?>public/dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="<?php echo base_url(); ?>public/dist/js/demo.js"></script>
+
+<script src="<?php echo base_url('public/dist/js/jquery.validate.js'); ?>"></script>
+<script src="<?php echo base_url('public/dist/js/additional-methods.js'); ?>"></script>
+
 </body>
 </html>
