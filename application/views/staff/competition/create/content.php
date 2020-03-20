@@ -14,52 +14,52 @@
       <div class="col-md-6">
         <div class="box box-primary">
             <!-- form start -->
-          <form role="form">
+          <form role="form" id="create-compet">
             <div class="box-body">
               <div class="row">
                 <div class="col-md-12">
-                  <label for="competition_name">ชื่อการแข่งขัน</label>
-                  <input type="text" class="form-control" id="name" name="name" placeholder="ชื่อรายการการแข่งขัน">
+                  <label for="competition_name">ชื่อการแข่งขัน<sup class="error">*</sup></label>
+                  <input type="text" class="form-control error" id="name" name="name" placeholder="ชื่อรายการการแข่งขัน" required>
                 </div>
               </div>
               <br>
               <div class="row">
                 <div class="col-md-6">
-                  <label for="compet_start">วันที่เริ่มการแข่งขัน <small>(01/01/2556)</small></label>
-                    <input type="text" class="form-control" name="compet_start" id="compet_start" placeholder="วว/ดด/ปปปป">
+                  <label for="compet_start">วันที่เริ่มการแข่งขัน<sup class="error">*</sup> <small>(01/01/2556)</small></label>
+                    <input type="text" class="form-control error" name="compet_start" id="compet_start" placeholder="วว/ดด/ปปปป" required>
                 </div>
                 <div class="col-md-6">
-                  <label for="compet_end">วันที่สุดการแข่งขัน <small>(01/01/2556)</small></label>
-                    <input type="text" class="form-control" name="compet_end" id="compet_end" placeholder="วว/ดด/ปปปป">
+                  <label for="compet_end">วันที่สุดการแข่งขัน<sup class="error">*</sup> <small>(01/01/2556)</small></label>
+                    <input type="text" class="form-control error" name="compet_end" id="compet_end" placeholder="วว/ดด/ปปปป" required>
                 </div>
               </div>
               <br>
               <div class="row">
                 <div class="col-md-12">
-                  <label for="palce">สถานที่แข่งขัน</label>
-                  <input type="text" class="form-control" name="palce" id="palce" placeholder="สถานที่แข่ง">
+                  <label for="palce">สถานที่แข่งขัน<sup class="error">*</sup></label>
+                  <input type="text" class="form-control error" name="palce" id="palce" placeholder="สถานที่แข่ง" required>
                 </div> 
               </div>
               <br>
               <div class="row">
                 <div class="col-md-6">
-                  <label for="start">วันที่เริ่มรับสมัคร<small>(01/01/2556)</small></label>
-                  <input type="text" class="form-control" id="start" placeholder="วว/ดด/ปปปป">
+                  <label for="start">วันที่เริ่มรับสมัคร<sup class="error">*</sup><small>(01/01/2556)</small></label>
+                  <input type="text" class="form-control error" id="start" placeholder="วว/ดด/ปปปป" required>
                 </div>
                 <div class="col-md-6">
-                  <label for="end">วันที่สิ้นสุดรับสมัคร<small>(01/02/2556)</small></label>
-                  <input type="text" class="form-control" id="end" placeholder="วว/ดด/ปปปป">
+                  <label for="end">วันที่สิ้นสุดรับสมัคร<sup class="error">*</sup><small>(01/02/2556)</small></label>
+                  <input type="text" class="form-control error" id="end" placeholder="วว/ดด/ปปปป" required>
                 </div>
               </div>
               <br>
               <div class="row">
                 <div class="col-md-6">
-                  <label for="startPay">ค่าสมัคร<small>(500)</small></label>
-                  <input type="text" class="form-control" id="payCost" placeholder="จำนวนเงิน">
+                  <label for="startPay">ค่าสมัคร<sup class="error">*</sup><small>(500)</small></label>
+                  <input type="text" class="form-control error" id="payCost" placeholder="จำนวนเงิน" required>
                 </div>      
               <div class="col-md-6">
-                  <label for="startPay">วันที่สิ้นสุดจ่ายเงิน<small>(01/02/2556)</small></label>
-                  <input type="text" class="form-control" id="endtPay" placeholder="วว/ดด/ปปปป">
+                  <label for="startPay">วันที่สิ้นสุดจ่ายเงิน<sup class="error">*</sup><small>(01/02/2556)</small></label>
+                  <input type="text" class="form-control error" id="endtPay" placeholder="วว/ดด/ปปปป" required>
                 </div>
               </div>
               <br>
@@ -72,7 +72,7 @@
               <br>
               <div class="row">
                 <div class="col-md-6">
-                  <label>รุ่น</label>
+                  <label>รุ่น<sup class="error">*</sup></label>
                   <select class="form-control" id="compet_type" name="compet_type">
                     <option value="none">--select--</option>
                     <option value="youth">รุ่นเยาวชน</option>
@@ -82,7 +82,7 @@
               </div>
               <div class="row">
                 <div class="col-md-6" id="gen">
-                  <label>อายุ</label>
+                  <label>อายุ<sup class="error">*</sup></label>
                   <select class="form-control" id="compet_gen" name="compet_gen">
                      <option value="none">--select--</option>
                         <!-- <option value = "U9">U9</option>

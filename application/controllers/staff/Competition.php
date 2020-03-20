@@ -23,9 +23,9 @@ class Competition extends BD_Controller {
 		$this->load->view('staff/layout/header');
 		$this->load->view('staff/layout/left-menu');
 		$this->load->view('staff/competition/create/content');
-		$this->load->view('staff/competition/create/script');
 		$this->load->view('staff/layout/footer');
 		$this->load->view('staff/layout/foot');
+		$this->load->view('staff/competition/create/script');
 	}
 
 	public function editCompetition()
