@@ -48,7 +48,30 @@
               <br><br>
               <a href="#" type="button" class="btn btn-primary">รายละเอียด</a>
               <a href="<?php echo base_url('staff/Competition/editCompetition') ?>" type="button" class="btn btn-warning">แก้ไข</a>
-              <a href="#" type="button" class="btn btn-danger">ลบ</a>
+
+              <a href="#" type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">ลบ</a>
+
+              <!-- Modal -->
+              <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                      <h4 class="modal-title" id="myModalLabel">ลบการแข่งขัน</h4>
+                    </div>
+                    <div class="modal-body">
+                     <p>คุณต้องการลบการแข่งขันหรือไม่</p>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">ยกเลิก</button>
+                      <button type="button" class="btn btn-danger">ลบ</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+
             </div>
             <div class="box-footer border-box-top">
               Post By : <p class="detail" id="auth">Admin</p> 
