@@ -70,6 +70,7 @@
                 </div>
               </div>
 
+              <a href="<?php echo base_url('staff/Grouptable/index') ?>" type="button" class="btn btn-default">ตารางแบ่งกลุ่ม</a>
 
 
             </div>
