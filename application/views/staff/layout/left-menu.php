@@ -8,7 +8,7 @@
         <li class="header">MAIN NAVIGATION</li>
         <li>
           <a href="<?php echo base_url('staff/competition/index') ?>">
-            <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+            <i class="fa fa-dashboard"></i> <span>หน้าแรก</span>
           </a>
         </li>
         <li class="active treeview">

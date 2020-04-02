@@ -24,10 +24,13 @@
         'endPay': "กรอกวันสิ้นสุดการจ่ายเงิน",
 
       }
+
     });
 
   });
-
+  $('.datepicker').datepicker({
+    startDate: '-3d'
+  });
   
       var compet_type = $("#compet_type").val();
       $("#gen").hide();
@@ -41,9 +44,9 @@
         e.preventDefault();
         $("#startPay").val($("#start").val());
       });
-      
-      
 
+      
+      
       function option(){
         if(compet_type == "youth"){
           $("#compet_gen").empty();
@@ -57,7 +60,7 @@
           $("#gen").hide();
         }
       }
-   
 
 
 </script>
+
