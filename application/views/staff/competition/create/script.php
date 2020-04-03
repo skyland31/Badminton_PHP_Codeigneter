@@ -48,13 +48,13 @@
       
       
       function option(){
-        if(compet_type == "youth"){
+        if(compet_type == 1){
           $("#compet_gen").empty();
-          $("#compet_gen").html( "<option value = 'U9'>U9</option><option value = 'U11'>U11</option><option value = 'U13'>U13</option><option value = 'U15'>U15</option><option value = 'U17'>U17</option>" );
+          $("#compet_gen").html( "<option value = 1>U9</option><option value = 2>U11</option><option value = 3>U13</option><option value = 4>U15</option><option value = 5>U17</option>" );
         }
-        else if(compet_type == "people"){
+        else if(compet_type == 2){
           $("#compet_gen").empty();
-          $("#compet_gen").html("<option value = 'N'>N</option><option value = 'S-'>S-</option><option value = 'S+'>S+</option><option value = 'P-'>P-</option><option value = 'P+C'>P+C</option>");
+          $("#compet_gen").html("<option value = 6>N</option><option value = 7>S-</option><option value = 8>S+</option><option value = 9>P-</option><option value = 10>P+C</option>");
         }
         else{
           $("#gen").hide();

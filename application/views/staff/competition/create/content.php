@@ -75,8 +75,8 @@
                   <label>รุ่น<sup class="error">*</sup></label>
                   <select class="form-control" id="compet_type" name="compet_type">
                     <option value="none">--select--</option>
-                    <option value="youth">รุ่นเยาวชน</option>
-                    <option value="people">รุ่นประชาชน</option>
+                    <option value = 1>รุ่นเยาวชน</option>
+                    <option value = 2>รุ่นประชาชน</option>
                   </select>
                 </div>
               </div>
