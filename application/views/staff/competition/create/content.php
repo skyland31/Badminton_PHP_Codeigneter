@@ -78,24 +78,28 @@
               <div class="row">
                 <div class="col-md-6">
                   <label class="checkbox-inline">
-                    <input type="checkbox" id="inlineCheckbox1" value="option1"> รุ่นเยาวชน
+                    <input type="checkbox" name="compet_type[]" id="compet_type1" value=1> รุ่นเยาวชน
                   </label>
                 </div>
                 <div class="col-md-6">
                   <label class="checkbox-inline">
-                    <input type="checkbox" id="inlineCheckbox2" value="option2"> U9
+                    <input type="checkbox" name="compet_genY[]" id="compet_genY1" value=1> U9
                   </label>
                   <br>
                   <label class="checkbox-inline">
-                    <input type="checkbox" id="inlineCheckbox2" value="option2"> U11
+                    <input type="checkbox" name="compet_genY[]" id="compet_genY2" value=2> U11
                   </label>
                   <br>
                   <label class="checkbox-inline">
-                    <input type="checkbox" id="inlineCheckbox2" value="option2"> U13
+                    <input type="checkbox" name="compet_genY[]" id="compet_genY3" value=3> U13
                   </label>
                   <br>
                   <label class="checkbox-inline">
-                    <input type="checkbox" id="inlineCheckbox2" value="option2"> U15
+                    <input type="checkbox" name="compet_genY[]" id="compet_genY4" value=4> U15
+                  </label>
+                  <br>
+                  <label class="checkbox-inline">
+                    <input type="checkbox" name="compet_genY[]" id="compet_genY5" value=5> U17
                   </label>
                 </div> 
               </div>
@@ -103,28 +107,28 @@
               <div class="row">
                 <div class="col-md-6">
                   <label class="checkbox-inline">
-                    <input type="checkbox" id="inlineCheckbox1" value="option1"> รุ่นประชาชน
+                    <input type="checkbox" name="compet_type[]" id="compet_type2" value=2> รุ่นประชาชน
                   </label>
                 </div>
                 <div class="col-md-6">
                   <label class="checkbox-inline">
-                    <input type="checkbox" id="inlineCheckbox2" value="option2"> N
+                    <input type="checkbox" name="compet_genP[]" id="compet_genP1" value=6> N
                   </label>
                   <br>
                   <label class="checkbox-inline">
-                    <input type="checkbox" id="inlineCheckbox2" value="option2"> S-
+                    <input type="checkbox" name="compet_genP[]" id="compet_genP2" value=7> S-
                   </label>
                   <br>
                   <label class="checkbox-inline">
-                    <input type="checkbox" id="inlineCheckbox2" value="option2"> S+
+                    <input type="checkbox" name="compet_genP[]" id="compet_genP3" value=8> S+
                   </label>
                   <br>
                   <label class="checkbox-inline">
-                    <input type="checkbox" id="inlineCheckbox2" value="option2"> P-
+                    <input type="checkbox" name="compet_genP[]" id="compet_genP4" value=9> P-
                   </label>
                   <br>
                   <label class="checkbox-inline">
-                    <input type="checkbox" id="inlineCheckbox2" value="option2"> P+C
+                    <input type="checkbox" name="compet_genP[]" id="compet_genP5" value=10> P+C
                   </label>
                 </div> 
               </div>                          
