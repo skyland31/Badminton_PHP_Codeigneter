@@ -31,7 +31,31 @@
   $('.datepicker').datepicker({
     startDate: '-3d'
   });
-  
+
+  // ---------------------------------------
+    $("#comEnd").hide();
+    $("#comRegisEnd").hide();
+
+    $("#start").change(function (e) { 
+      e.preventDefault();
+      if($("#start").val() != null){
+        $("#comRegisEnd").show();
+      }
+      if($("#start").val() == ""){
+        $("#comRegisEnd").hide();
+      }
+    });
+    $("#compet_start").change(function (e) { 
+      e.preventDefault();
+      if($("#compet_start").val() != null){
+        $("#comEnd").show();
+      }
+      if($("#compet_start").val() == ""){
+        $("#comEnd").hide();
+      }
+    });
+// ----------------------------------------------------------
+
       var compet_type = $("#compet_type").val();
       $("#gen").hide();
       $("#compet_type").change(function (e) { 
@@ -46,7 +70,7 @@
       });
 
       
-      
+//-----------------------function--------------------------------- 
       function option(){
         if(compet_type == 1){
           $("#compet_gen").empty();

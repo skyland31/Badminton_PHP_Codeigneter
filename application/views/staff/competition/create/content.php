@@ -28,7 +28,7 @@
                   <label for="compet_start">วันที่เริ่มการแข่งขัน<sup class="error">*</sup> <small>(01/01/2556)</small></label>
                     <input type="text" class ="datepicker" data-date-format="yyyy-mm-dd" class="form-control error" name="compet_start" id="compet_start" placeholder="วว/ดด/ปปปป" required>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6" id ="comEnd">
                   <label for="compet_end">วันที่สุดการแข่งขัน<sup class="error">*</sup> <small>(01/01/2556)</small></label>
                     <input type="text"class ="datepicker" data-date-format="yyyy-mm-dd" class="form-control error" name="compet_end" id="compet_end" placeholder="วว/ดด/ปปปป" required>
                 </div>
@@ -46,7 +46,7 @@
                   <label for="start">วันที่เปิดรับสมัคร<sup class="error">*</sup><small>(01/01/2556)</small></label>
                   <input type="text" class ="datepicker" data-date-format="yyyy-mm-dd" class="form-control error" name="start" id="start" placeholder="วว/ดด/ปปปป" required>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6" id ="comRegisEnd">
                   <label for="end">วันที่ปิดรับสมัคร<sup class="error">*</sup><small>(01/02/2556)</small></label>
                   <input type="text" class ="datepicker" data-date-format="yyyy-mm-dd" class="form-control error" name="end" id="end" placeholder="วว/ดด/ปปปป" required>
                 </div>
