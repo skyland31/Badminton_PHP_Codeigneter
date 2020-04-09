@@ -71,24 +71,67 @@
               </div>
               <br>
               <div class="row">
-                <div class="col-md-6">
-                  <label>รุ่น<sup class="error">*</sup></label>
-                  <select class="form-control" id="compet_type" name="compet_type">
-                    <option value="none">--select--</option>
-                    <option value = 1>รุ่นเยาวชน</option>
-                    <option value = 2>รุ่นประชาชน</option>
-                  </select>
+                <div class="col-md-12">
+                  <label>รุ่นที่เปิดรับแข่งขัน</label>
                 </div>
               </div>
               <div class="row">
-                <div class="col-md-6" id="gen">
-                  <label>อายุ<sup class="error">*</sup></label>
-                  <select class="form-control" id="compet_gen" name="compet_gen">
-                     <option value="none">--select--</option>
-                  </select>
+                <div class="col-md-6">
+                  <label class="checkbox-inline">
+                    <input type="checkbox" name="compet_type[]" id="compet_type1" value=1> รุ่นเยาวชน
+                  </label>
                 </div>
+                <div class="col-md-6">
+                  <label class="checkbox-inline">
+                    <input type="checkbox" name="compet_genY[]" id="compet_genY1" value=1> U9
+                  </label>
+                  <br>
+                  <label class="checkbox-inline">
+                    <input type="checkbox" name="compet_genY[]" id="compet_genY2" value=2> U11
+                  </label>
+                  <br>
+                  <label class="checkbox-inline">
+                    <input type="checkbox" name="compet_genY[]" id="compet_genY3" value=3> U13
+                  </label>
+                  <br>
+                  <label class="checkbox-inline">
+                    <input type="checkbox" name="compet_genY[]" id="compet_genY4" value=4> U15
+                  </label>
+                  <br>
+                  <label class="checkbox-inline">
+                    <input type="checkbox" name="compet_genY[]" id="compet_genY5" value=5> U17
+                  </label>
+                </div> 
               </div>
-                          
+              
+              <div class="row">
+                <div class="col-md-6">
+                  <label class="checkbox-inline">
+                    <input type="checkbox" name="compet_type[]" id="compet_type2" value=2> รุ่นประชาชน
+                  </label>
+                </div>
+                <div class="col-md-6">
+                  <label class="checkbox-inline">
+                    <input type="checkbox" name="compet_genP[]" id="compet_genP1" value=6> N
+                  </label>
+                  <br>
+                  <label class="checkbox-inline">
+                    <input type="checkbox" name="compet_genP[]" id="compet_genP2" value=7> S-
+                  </label>
+                  <br>
+                  <label class="checkbox-inline">
+                    <input type="checkbox" name="compet_genP[]" id="compet_genP3" value=8> S+
+                  </label>
+                  <br>
+                  <label class="checkbox-inline">
+                    <input type="checkbox" name="compet_genP[]" id="compet_genP4" value=9> P-
+                  </label>
+                  <br>
+                  <label class="checkbox-inline">
+                    <input type="checkbox" name="compet_genP[]" id="compet_genP5" value=10> P+C
+                  </label>
+                </div> 
+              </div>                          
               <div class="box-footer">
                 <div class="row pull-right">
                   <div class="col-md-12">

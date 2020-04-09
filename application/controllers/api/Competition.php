@@ -8,7 +8,7 @@ class Competition extends CI_Controller {
         parent::__construct();
         $this->load->model('competitions');
     }
-
+    
 	public function create()
 	{
         $name = $this->input->post('name');
@@ -21,13 +21,11 @@ class Competition extends CI_Controller {
         $endPay = $this->input->post('endPay'); //pay_end in database
         $detail = $this->input->post('details');
         $compet_type = $this->input->post('compet_type');
-        $compet_gen = $this->input->post('compet_gen');
-
+        $compet_genY = $this->input->post('compet_genY');
+        $compet_genP = $this->input->post('compet_genP');
         $data = array(
             'name'  => $name,
             'detail'  => $detail,
-            'compet_type'  => $compet_type,
-            'compet_gen'  => $compet_gen,
             'place'  => $palce,
             'prize'  => $price,
             'compet_start'  => $compet_start,
@@ -35,12 +33,50 @@ class Competition extends CI_Controller {
             'start'  => $start,
             'end'  => $end,
             'pay_end'  => $endPay,
+            'compet_type'  => 0,
+            'compet_gen'  => 0,   
             
         );
-       $this->competitions->insert($data);
+        if(sizeof($compet_type) == 1){
+            if($compet_type[0] == 1){
+                foreach($compet_genY as $value){
+                    $data['compet_type'] = $compet_type[0];
+                    $data['compet_gen'] = $value;
+                    $this->competitions->insert($data);
+                }
+            }
+            else{
+                foreach($compet_genP as $value){
+                    $data['compet_type'] = $compet_type[0];
+                    $data['compet_gen'] = $value;
+                    $this->competitions->insert($data);
+                }
+            }
+            
+        }
+        else{
+            for($i = 0 ; $i < sizeof($compet_type) ; $i++){
+                if($compet_type[$i] == 1){
+                    foreach($compet_genY as $value){
+                        $data['compet_type'] = $compet_type[$i];
+                        $data['compet_gen'] = $value;
+                        $this->competitions->insert($data);
+                    }
+                }
+                else{
+                    foreach($compet_genP as $value){
+                        $data['compet_type'] = $compet_type[$i];
+                        $data['compet_gen'] = $value;
+                        $this->competitions->insert($data);
+                    }
+                }
+            }
+        }
        echo "<script>alert('บันทึกข้อมูลเสร็จสิ้น')</script>";
        redirect(base_url('staff/Competition'),'refresh');
-       
+    }
+    public function allCompetation(){
+        redirect(base_url('staff/Competition'),'refresh');
     }
 
 }
