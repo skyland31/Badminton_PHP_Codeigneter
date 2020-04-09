@@ -71,24 +71,63 @@
               </div>
               <br>
               <div class="row">
-                <div class="col-md-6">
-                  <label>รุ่น<sup class="error">*</sup></label>
-                  <select class="form-control" id="compet_type" name="compet_type">
-                    <option value="none">--select--</option>
-                    <option value = 1>รุ่นเยาวชน</option>
-                    <option value = 2>รุ่นประชาชน</option>
-                  </select>
+                <div class="col-md-12">
+                  <label>รุ่นที่เปิดรับแข่งขัน</label>
                 </div>
               </div>
               <div class="row">
-                <div class="col-md-6" id="gen">
-                  <label>อายุ<sup class="error">*</sup></label>
-                  <select class="form-control" id="compet_gen" name="compet_gen">
-                     <option value="none">--select--</option>
-                  </select>
+                <div class="col-md-6">
+                  <label class="checkbox-inline">
+                    <input type="checkbox" id="inlineCheckbox1" value="option1"> รุ่นเยาวชน
+                  </label>
                 </div>
+                <div class="col-md-6">
+                  <label class="checkbox-inline">
+                    <input type="checkbox" id="inlineCheckbox2" value="option2"> U9
+                  </label>
+                  <br>
+                  <label class="checkbox-inline">
+                    <input type="checkbox" id="inlineCheckbox2" value="option2"> U11
+                  </label>
+                  <br>
+                  <label class="checkbox-inline">
+                    <input type="checkbox" id="inlineCheckbox2" value="option2"> U13
+                  </label>
+                  <br>
+                  <label class="checkbox-inline">
+                    <input type="checkbox" id="inlineCheckbox2" value="option2"> U15
+                  </label>
+                </div> 
               </div>
-                          
+              
+              <div class="row">
+                <div class="col-md-6">
+                  <label class="checkbox-inline">
+                    <input type="checkbox" id="inlineCheckbox1" value="option1"> รุ่นประชาชน
+                  </label>
+                </div>
+                <div class="col-md-6">
+                  <label class="checkbox-inline">
+                    <input type="checkbox" id="inlineCheckbox2" value="option2"> N
+                  </label>
+                  <br>
+                  <label class="checkbox-inline">
+                    <input type="checkbox" id="inlineCheckbox2" value="option2"> S-
+                  </label>
+                  <br>
+                  <label class="checkbox-inline">
+                    <input type="checkbox" id="inlineCheckbox2" value="option2"> S+
+                  </label>
+                  <br>
+                  <label class="checkbox-inline">
+                    <input type="checkbox" id="inlineCheckbox2" value="option2"> P-
+                  </label>
+                  <br>
+                  <label class="checkbox-inline">
+                    <input type="checkbox" id="inlineCheckbox2" value="option2"> P+C
+                  </label>
+                </div> 
+              </div>                          
               <div class="box-footer">
                 <div class="row pull-right">
                   <div class="col-md-12">
