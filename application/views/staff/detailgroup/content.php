@@ -21,42 +21,47 @@
         <div class="col-md-8">
           <div class="box">
             <div class="box-header border-box-bottom" id="compet-name">
-              <h3>Group A</h3>
+              <h3>Group A มือ N</h3>
             </div>
                       
             <table class="table table-hover">
                 <thead>
                 <tr>
-                    <th></th>
-                    <th></th>
                     <th>เวลาแข่ง</th>
+                    <th></th>
+                    <th></th>
                 </tr>
                 </thead>
                 <tbody>
                 <tr>
-                    <td>มวล1</td>
-                    <td>มวล2</td>
                     <td>9.00 AM</td>
+                    <td>มวล1</td>
+                    <td>มวล2</td>    
                 </tr>
                 <tr>
+                    <td>10.00 AM</td>
                     <td>มวล1</td>
                     <td>มวล3</td>
-                    <td>10.00 AM</td>
                 </tr>
                 <tr>
-                    <td>มวล2</td>
-                    <td>มวล4</td>
                     <td>11.00 AM</td>
+                    <td>มวล2</td>
+                    <td>มวล4</td>
                 </tr>
                 <tr>
+                    <td>1.00 PM</td>
                     <td>มวล2</td>
                     <td>มวล3</td>
-                    <td>1.00 PM</td>
                 </tr>
                 <tr>
+                    <td>2.00 PM</td>
                     <td>มวล4</td>
                     <td>มวล3</td>
-                    <td>2.00 PM</td>
+                </tr>
+                <tr>
+                    <td>3.00 PM</td>
+                    <td>มวล4</td>
+                    <td>มวล1</td>
                 </tr>
 
 
