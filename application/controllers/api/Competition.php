@@ -97,6 +97,7 @@ class Competition extends CI_Controller {
                     $b = $data[$i]->name;
                     $j= $j +1;
                     if($i == ($sizeData-1)){
+                        $gen[] = $compet_gen->name;
                         $actual[] = array(
                             'name'  => $data[$i]->name,
                             'detail'  => $data[$i]->detail,
@@ -151,6 +152,7 @@ class Competition extends CI_Controller {
         }
         else{
             echo "<script>alert('ไม่มีข้อมูลใน Database')</script>";
+            redirect(base_url('staff/Competition'),'refresh');
         }
     }
 
