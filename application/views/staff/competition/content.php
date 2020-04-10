@@ -1,3 +1,4 @@
+
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -10,7 +11,6 @@
         <li class="active">รายการการแข่งขัน</li>
       </ol>
     </section>
-
     <!-- Main content -->
     <section class="content">
       <div class="row">
@@ -46,7 +46,7 @@
               <br>
               <strong> สิ้นสุดจ่ายค่าสมัคร : </strong><p class="detail" id="pay-end">25/03/2020</p>
               <br><br>
-              <a href="#" type="button" class="btn btn-primary">รายละเอียด</a>
+              <a href="<?php echo base_url('api/Competition/allCompetation') ?>" type="button" class="btn btn-primary">รายละเอียด</a>
               <a href="<?php echo base_url('staff/Competition/editCompetition') ?>" type="button" class="btn btn-warning">แก้ไข</a>
 
               <a href="#" type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">ลบ</a>
@@ -71,8 +71,6 @@
               </div>
 
               <a href="<?php echo base_url('staff/Grouptable/index') ?>" type="button" class="btn btn-default">ตารางแบ่งกลุ่ม</a>
-
-
             </div>
             <div class="box-footer border-box-top">
               Post By : <p class="detail" id="auth">Admin</p> 
@@ -80,7 +78,9 @@
           </div>
         </div> 
       </div>
+
     </section>
+    
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
