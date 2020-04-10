@@ -78,61 +78,35 @@ class Competition extends CI_Controller {
 
     public function allCompetation(){
         $data = $this->competitions->allCompetations();
-        $j = 0;
-        $sizeData = sizeof($data);
-        for($i = 0 ; $i < $sizeData ;$i=$i+1){
-            $compet_type =$data[$i]->compet_type;
-            $compet_gen = $data[$i]->compet_gen;
-            $compet_type_name = $this->competitions->searchType($compet_type);
-            $compet_gen = $this->competitions->searchGen($compet_gen);
-            if($j == 0){
-                $j= $j +1;
-                $type[] = $compet_type_name->name;
-                $gen[] = $compet_gen->name;
-                $a =$data[$i]->name;
-                $firstType = $compet_type_name->name;
-            }
-            else{
-                $b = $data[$i]->name;
-                $j= $j +1;
-                if($i == ($sizeData-1)){
-                    $actual[] = array(
-                        'name'  => $data[$i]->name,
-                        'detail'  => $data[$i]->detail,
-                        'place'  => $data[$i]->place,
-                        'prize'  => $data[$i]->prize,
-                        'compet_start'  => $data[$i]->compet_start,
-                        'compet_end'  => $data[$i]->compet_end,
-                        'start'  => $data[$i]->start,
-                        'end'  => $data[$i]->end,
-                        'pay_end'  => $data[$i]->pay_end,
-                        'compet_type'  => $type,
-                        'compet_gen'  => $gen,   
-                    ); 
-                    $type = null;
-                    $gen = null;
-                    $j = 0;
+        if($data != null){
+            $j = 0;
+            $sizeData = sizeof($data);
+            for($i = 0 ; $i < $sizeData ;$i=$i+1){
+                $compet_type =$data[$i]->compet_type;
+                $compet_gen = $data[$i]->compet_gen;
+                $compet_type_name = $this->competitions->searchType($compet_type);
+                $compet_gen = $this->competitions->searchGen($compet_gen);
+                if($j == 0){
+                    $j= $j +1;
+                    $type[] = $compet_type_name->name;
+                    $gen[] = $compet_gen->name;
+                    $a =$data[$i]->name;
+                    $firstType = $compet_type_name->name;
                 }
                 else{
-                    if($a == $b){
-                        $endType = $compet_type_name->name;
-                        if($firstType != $endType){
-                            $type[] = $compet_type_name->name;
-                        }
-                        $firstType = $compet_type_name->name;
-                        $gen[] = $compet_gen->name;
-                    }
-                    else{
+                    $b = $data[$i]->name;
+                    $j= $j +1;
+                    if($i == ($sizeData-1)){
                         $actual[] = array(
-                            'name'  => $data[$i-1]->name,
-                            'detail'  => $data[$i-1]->detail,
-                            'place'  => $data[$i-1]->place,
-                            'prize'  => $data[$i-1]->prize,
-                            'compet_start'  => $data[$i-1]->compet_start,
-                            'compet_end'  => $data[$i-1]->compet_end,
-                            'start'  => $data[$i-1]->start,
-                            'end'  => $data[$i-1]->end,
-                            'pay_end'  => $data[$i-1]->pay_end,
+                            'name'  => $data[$i]->name,
+                            'detail'  => $data[$i]->detail,
+                            'place'  => $data[$i]->place,
+                            'prize'  => $data[$i]->prize,
+                            'compet_start'  => $data[$i]->compet_start,
+                            'compet_end'  => $data[$i]->compet_end,
+                            'start'  => $data[$i]->start,
+                            'end'  => $data[$i]->end,
+                            'pay_end'  => $data[$i]->pay_end,
                             'compet_type'  => $type,
                             'compet_gen'  => $gen,   
                         ); 
@@ -140,13 +114,44 @@ class Competition extends CI_Controller {
                         $gen = null;
                         $j = 0;
                     }
+                    else{
+                        if($a == $b){
+                            $endType = $compet_type_name->name;
+                            if($firstType != $endType){
+                                $type[] = $compet_type_name->name;
+                            }
+                            $firstType = $compet_type_name->name;
+                            $gen[] = $compet_gen->name;
+                        }
+                        else{
+                            $actual[] = array(
+                                'name'  => $data[$i-1]->name,
+                                'detail'  => $data[$i-1]->detail,
+                                'place'  => $data[$i-1]->place,
+                                'prize'  => $data[$i-1]->prize,
+                                'compet_start'  => $data[$i-1]->compet_start,
+                                'compet_end'  => $data[$i-1]->compet_end,
+                                'start'  => $data[$i-1]->start,
+                                'end'  => $data[$i-1]->end,
+                                'pay_end'  => $data[$i-1]->pay_end,
+                                'compet_type'  => $type,
+                                'compet_gen'  => $gen,   
+                            ); 
+                            $type = null;
+                            $gen = null;
+                            $j = 0;
+                        }
+                    }
+                    
                 }
                 
+                
             }
-            
-            
+            echo json_encode($actual);
         }
-        echo json_encode($actual);
+        else{
+            echo "<script>alert('ไม่มีข้อมูลใน Database')</script>";
+        }
     }
 
 }
