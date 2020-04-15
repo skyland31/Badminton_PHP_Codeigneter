@@ -10,6 +10,7 @@
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
         <li class="active">รายการการแข่งขัน</li>
       </ol>
+      <a href="<?php echo base_url('api/Competition/allCompetation') ?>" type="button" class="btn btn-primary">Json Competetion</a>
     </section>
     <!-- Main content -->
     <section class="content">
@@ -58,7 +59,26 @@
               <br>
               <strong> สิ้นสุดจ่ายค่าสมัคร : </strong><p class="detail" id="pay-end"><?php echo $value->pay_end ?></p>
               <br><br>
-              <a href="<?php echo base_url('api/Competition/allCompetation') ?>" type="button" class="btn btn-primary">รายละเอียด</a>
+              <a href="#" type="button" class="btn btn-primary" data-toggle="modal" data-target="#desciptionModal">รายละเอียด</a>
+              <!-- Modal -->
+              <div class="modal fade" id="desciptionModal" tabindex="-1" role="dialog" aria-labelledby="desciption">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                      <h4 class="modal-title" id="desciption">ลบการแข่งขัน</h4>
+                    </div>
+                    <div class="modal-body">
+                     <p>คุณต้องการลบการแข่งขันหรือไม่</p>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-default" data-dismiss="modal">ยกเลิก</button>
+                      <button type="button" class="btn btn-danger">ลบ</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
               <a href="<?php echo base_url('staff/Competition/editCompetition') ?>" type="button" class="btn btn-warning">แก้ไข</a>
 
               <a href="#" type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">ลบ</a>
