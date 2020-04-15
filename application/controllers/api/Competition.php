@@ -86,18 +86,26 @@ class Competition extends CI_Controller {
                 $compet_gen = $data[$i]->compet_gen;
                 $compet_type_name = $this->competitions->searchType($compet_type);
                 $compet_gen = $this->competitions->searchGen($compet_gen);
-                if($j == 0){
-                    $j= $j +1;
+                if($i == 0){
                     $type[] = $compet_type_name->name;
-                    $gen[] = $compet_gen->name;
+                    if($compet_gen->type == 1){
+                        $gen1[] = $compet_gen->name;
+                    }
+                    else{
+                        $gen2[] = $compet_gen->name;
+                    }
                     $a =$data[$i]->name;
                     $firstType = $compet_type_name->name;
                 }
                 else{
                     $b = $data[$i]->name;
-                    $j= $j +1;
                     if($i == ($sizeData-1)){
-                        $gen[] = $compet_gen->name;
+                        if($compet_gen->type == 1){
+                            $gen1[] = $compet_gen->name;
+                        }
+                        else{
+                            $gen2[] = $compet_gen->name;
+                        }
                         $actual[] = array(
                             'name'  => $data[$i]->name,
                             'detail'  => $data[$i]->detail,
@@ -109,11 +117,13 @@ class Competition extends CI_Controller {
                             'end'  => $data[$i]->end,
                             'pay_end'  => $data[$i]->pay_end,
                             'compet_type'  => $type,
-                            'compet_gen'  => $gen,   
+                            'compet_gen1'  => $gen1,   
+                            'compet_gen2'  => $gen2,  
                         ); 
                         $type = null;
-                        $gen = null;
-                        $j = 0;
+                        $gen1 = null;
+                        $gen2 = null;
+                        
                     }
                     else{
                         if($a == $b){
@@ -122,7 +132,12 @@ class Competition extends CI_Controller {
                                 $type[] = $compet_type_name->name;
                             }
                             $firstType = $compet_type_name->name;
-                            $gen[] = $compet_gen->name;
+                            if($compet_gen->type == 1){
+                                $gen1[] = $compet_gen->name;
+                            }
+                            else{
+                                $gen2[] = $compet_gen->name;
+                            }
                         }
                         else{
                             $actual[] = array(
@@ -136,12 +151,22 @@ class Competition extends CI_Controller {
                                 'end'  => $data[$i-1]->end,
                                 'pay_end'  => $data[$i-1]->pay_end,
                                 'compet_type'  => $type,
-                                'compet_gen'  => $gen,   
+                                'compet_gen1'  => $gen1,   
+                                'compet_gen2'  => $gen2,   
                             ); 
                             $type = null;
-                            $gen = null;
-                            $j = 0;
-                        }
+                            $gen1 = null;
+                            $gen2 = null;
+                            $type[] = $compet_type_name->name;
+                            if($compet_gen->type == 1){
+                                $gen1[] = $compet_gen->name;
+                            }
+                            else{
+                                $gen2[] = $compet_gen->name;
+                            }
+                            $a =$data[$i]->name;
+                            $firstType = $compet_type_name->name;
+                            }
                     }
                     
                 }
