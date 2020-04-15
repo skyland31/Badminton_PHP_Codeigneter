@@ -66,14 +66,13 @@
                   <div class="modal-content">
                     <div class="modal-header">
                       <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                      <h4 class="modal-title" id="desciption">ลบการแข่งขัน</h4>
+                      <h4 class="modal-title" id="desciption">รายละเอียด <?php echo $value->name ?></h4>
                     </div>
                     <div class="modal-body">
-                     <p>คุณต้องการลบการแข่งขันหรือไม่</p>
+                     <p><?php echo $value->detail ?></p>
                     </div>
                     <div class="modal-footer">
-                      <button type="button" class="btn btn-default" data-dismiss="modal">ยกเลิก</button>
-                      <button type="button" class="btn btn-danger">ลบ</button>
+                      <button type="button" class="btn btn-default" data-dismiss="modal">ปิด</button>
                     </div>
                   </div>
                 </div>
