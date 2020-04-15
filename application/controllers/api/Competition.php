@@ -107,6 +107,7 @@ class Competition extends CI_Controller {
                             $gen2[] = $compet_gen->name;
                         }
                         $actual[] = array(
+                            'id' => $data[$i]->compet_id,
                             'name'  => $data[$i]->name,
                             'detail'  => $data[$i]->detail,
                             'place'  => $data[$i]->place,
@@ -141,6 +142,7 @@ class Competition extends CI_Controller {
                         }
                         else{
                             $actual[] = array(
+                                'id' => (int)$data[$i-1]->compet_id,
                                 'name'  => $data[$i-1]->name,
                                 'detail'  => $data[$i-1]->detail,
                                 'place'  => $data[$i-1]->place,
@@ -179,6 +181,20 @@ class Competition extends CI_Controller {
             echo "<script>alert('ไม่มีข้อมูลใน Database')</script>";
             redirect(base_url('staff/Competition'),'refresh');
         }
+    }
+    public function delete($id){
+        $datafindName = $this->competitions->searchCompetitionById($id);
+        if($datafindName != null){
+            $data = $this->competitions->searchCompetitionByName($datafindName->name);
+            for($i = 0 ; $i < sizeof($data) ; $i++){
+                $idCom = $data[$i]->compet_id;
+                $name = $data[$i]->compet_gen;
+                $this->competitions->delete($idCom,$name);
+                
+            }
+            echo "<script>alert('ลบแล้ว')</script>";
+        }   
+        redirect(base_url('staff/Competition'),'refresh');
     }
 
 }

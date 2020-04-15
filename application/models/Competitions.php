@@ -23,4 +23,19 @@ class Competitions extends CI_Model {
         $result = $this->db->get();
         return $result->row();
     }
+    function delete($id,$gen){
+        return $this->db->delete('competition', array('compet_id' => $id,'compet_gen' => $gen));
+    }
+    function searchCompetitionById($id){
+        $this->db->from("competition");
+        $this->db->where("compet_id = ".$id);
+        $result = $this->db->get();
+        return $result->row();
+    }
+    function searchCompetitionByName($name){
+        $this->db->from("competition");
+        $this->db->where("name = '".$name."'");
+        $result = $this->db->get();
+        return $result->result();
+    }
 }

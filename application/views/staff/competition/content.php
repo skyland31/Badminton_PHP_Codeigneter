@@ -19,12 +19,12 @@
         $json = file_get_contents(base_url('api/Competition/allCompetation'));
         $obj = json_decode($json);
         if($obj != null){
-        foreach ($obj as $value) {
+          foreach ($obj as $value) {
         ?>
           <div class="col-md-6">
             <div class="box">
               <div class="box-header border-box-bottom" id="compet-name">
-                <h3><?php echo $value->name ?></h3>
+                <h3><?php echo $value->name?></h3>
               </div>
               <div class="box-body" id="compet-detail">
               <?php echo "<strong> เปิดรับประเภท :  </strong>";
@@ -80,26 +80,26 @@
 
                 <a href="<?php echo base_url('staff/Competition/editCompetition') ?>" type="button" class="btn btn-warning">แก้ไข</a>
 
-                <a href="#" type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">ลบ</a>
+                <a href="<?php echo base_url('api/Competition/delete/'.$value->id) ?>" type="button" class="btn btn-danger"  id="delete">ลบ <?php echo $value->id ?></a>
 
                 <!-- Modal -->
-                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <!-- <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                   <div class="modal-dialog" role="document">
                     <div class="modal-content">
                       <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title" id="myModalLabel">ลบการแข่งขัน</h4>
+                        <h4 class="modal-title" id="myModalLabel">ลบการแข่งขัน </h4>
                       </div>
                       <div class="modal-body">
-                      <p>คุณต้องการลบการแข่งขันหรือไม่</p>
+                      <p>คุณต้องการลบการแข่งขันหรือไม่ </p>
                       </div>
                       <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">ยกเลิก</button>
-                        <button type="button" class="btn btn-danger">ลบ</button>
+                        <a href="#" type="button" class="btn btn-danger">ลบ</a>
                       </div>
                     </div>
                   </div>
-                </div>
+                </div> -->
 
                 <a href="<?php echo base_url('staff/Grouptable/index') ?>" type="button" class="btn btn-default">ตารางแบ่งกลุ่ม</a>
               </div>
@@ -109,7 +109,8 @@
             </div>
           </div> 
         <?php 
-        }}?>
+          }
+        }?>
         
       </div>
 
