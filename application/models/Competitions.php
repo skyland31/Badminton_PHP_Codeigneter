@@ -38,4 +38,9 @@ class Competitions extends CI_Model {
         $result = $this->db->get();
         return $result->result();
     }
+    function update($data){
+        $this->db->where('compet_id', $data['compet_id']);
+        $result = $this->db->update('competition', $data);
+        return $result;
+    }
 }

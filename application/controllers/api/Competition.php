@@ -107,7 +107,7 @@ class Competition extends CI_Controller {
                             $gen2[] = $compet_gen->name;
                         }
                         $actual[] = array(
-                            'id' => $data[$i]->compet_id,
+                            'id' => (int)$data[$i]->compet_id,
                             'name'  => $data[$i]->name,
                             'detail'  => $data[$i]->detail,
                             'place'  => $data[$i]->place,
@@ -195,6 +195,79 @@ class Competition extends CI_Controller {
             echo "<script>alert('ลบแล้ว')</script>";
         }   
         redirect(base_url('staff/Competition'),'refresh');
+    }
+
+    public function searchCompetitionById($id){
+        $data = $this->competitions->searchCompetitionById($id);
+        $dataByname = $this->competitions->searchCompetitionByName($data->name);
+        $i = 0;
+        if($dataByname != null){
+            foreach($dataByname as $data){
+                $compet_gen[] = $data->compet_gen;
+                if($i == 0){
+                    $firstCompetType = $data->compet_type;
+                    $compet_type[] = $data->compet_type;
+                }
+                else{
+                    $secondCompetType = $data->compet_type;
+                    if($firstCompetType != $secondCompetType){
+                        $compet_type[] = $data->compet_type;
+                        $firstCompetType = $data->compet_type;
+                    }
+                    if($i == sizeof($dataByname)-1){
+                        $actual = array(
+                            'id' => (int)$data->compet_id,
+                            'name'  => $data->name,
+                            'detail'  => $data->detail,
+                            'place'  => $data->place,
+                            'prize'  => $data->prize,
+                            'compet_start'  => $data->compet_start,
+                            'compet_end'  => $data->compet_end,
+                            'start'  => $data->start,
+                            'end'  => $data->end,
+                            'pay_end'  => $data->pay_end,
+                            'compet_type'  => $compet_type,
+                            'compet_gen'  => $compet_gen,   
+                        );
+                    }
+                }
+                $i = $i+1;
+            }
+        }
+        else{
+            echo "<script>alert('Can not found in Database')</script>";
+            redirect(base_url('staff/Competition'),'refresh');
+        }
+        echo json_encode($actual);
+    }
+
+    public function update(){
+        $name = $this->input->post('name');
+        $compet_start = $this->input->post('compet_start');
+        $compet_end = $this->input->post('compet_end');
+        $palce = $this->input->post('palce');
+        $start = $this->input->post('start');
+        $end = $this->input->post('end');
+        $price = $this->input->post('payCost'); // prize in database
+        $endPay = $this->input->post('endPay'); //pay_end in database
+        $detail = $this->input->post('details');
+        $compet_type = $this->input->post('compet_type');
+        $compet_genY = $this->input->post('compet_genY');
+        $compet_genP = $this->input->post('compet_genP');
+        $data = array(
+            'name'  => $name,
+            'detail'  => $detail,
+            'place'  => $palce,
+            'prize'  => $price,
+            'compet_start'  => $compet_start,
+            'compet_end'  => $compet_end,
+            'start'  => $start,
+            'end'  => $end,
+            'pay_end'  => $endPay,
+            'compet_type'  => 0,
+            'compet_gen'  => 0,   
+            
+        );
     }
 
 }

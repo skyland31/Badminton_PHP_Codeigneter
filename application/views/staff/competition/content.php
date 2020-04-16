@@ -78,7 +78,7 @@
                   </div>
                 </div>
 
-                <a href="<?php echo base_url('staff/Competition/editCompetition') ?>" type="button" class="btn btn-warning">แก้ไข</a>
+                <a href="<?php echo base_url('staff/Competition/editCompetition/'.$value->id) ?>" type="button" class="btn btn-warning">แก้ไข</a>
 
                 <a href="<?php echo base_url('api/Competition/delete/'.$value->id) ?>" onclick = "return confirm('Are you want delete Competition this?');" type="button" class="btn btn-danger"  id="delete">ลบ</a>
 
