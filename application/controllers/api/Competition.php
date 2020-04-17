@@ -164,46 +164,78 @@ class Competition extends CI_Controller {
     }
 
     public function searchCompetitionById($id){
-        $data = $this->competitions->searchCompetitionById($id);
-        $dataByname = $this->competitions->searchCompetitionByName($data->name);
+        //$data = $this->competitions->searchCompetitionById($id);
+        $dataById = $this->competitions->searchCompetitionById($id);
         $i = 0;
-        if($dataByname != null){
-            foreach($dataByname as $data){
-                $compet_gen[] = $data->compet_gen;
+        if($dataById != null){
+            $dataGen = $this->competitions->searchGenCompetations($id);
+            $i = 0;
+            foreach($dataGen as $gen){
+                $compet_gen[] = $gen->gen;
                 if($i == 0){
-                    $firstCompetType = $data->compet_type;
-                    $compet_type[] = $data->compet_type;
+                    $firstType = $gen->type;
+                    $compet_type[] = $gen->type;
+                    $i=$i+1;
                 }
                 else{
-                    $secondCompetType = $data->compet_type;
-                    if($firstCompetType != $secondCompetType){
-                        $compet_type[] = $data->compet_type;
-                        $firstCompetType = $data->compet_type;
+                    if($firstType != $gen->type){
+                        $compet_type[] = $gen->type;
+                        
                     }
-                    if($i == sizeof($dataByname)-1){
-                        $actual = array(
-                            'id' => (int)$data->compet_id,
-                            'name'  => $data->name,
-                            'detail'  => $data->detail,
-                            'place'  => $data->place,
-                            'prize'  => $data->prize,
-                            'compet_start'  => $data->compet_start,
-                            'compet_end'  => $data->compet_end,
-                            'start'  => $data->start,
-                            'end'  => $data->end,
-                            'pay_end'  => $data->pay_end,
-                            'compet_type'  => $compet_type,
-                            'compet_gen'  => $compet_gen,   
-                        );
-                    }
+                    $firstType = $gen->type;
+                    $i=$i+1;
                 }
-                $i = $i+1;
             }
+            $actual = array(
+                'id' => (int)$dataById->compet_id,
+                'name'  => $dataById->name,
+                'detail'  => $dataById->detail,
+                'place'  => $dataById->place,
+                'prize'  => $dataById->prize,
+                'compet_start'  => $dataById->compet_start,
+                'compet_end'  => $dataById->compet_end,
+                'start'  => $dataById->start,
+                'end'  => $dataById->end,
+                'pay_end'  => $dataById->pay_end,
+                'compet_type'  => $compet_type,
+                'compet_gen'  => $compet_gen,   
+            );
+            // foreach($dataById as $data){
+            //     $compet_gen[] = $data->compet_gen;
+            //     if($i == 0){
+            //         $firstCompetType = $data->compet_type;
+            //         $compet_type[] = $data->compet_type;
+            //     }
+            //     else{
+            //         $secondCompetType = $data->compet_type;
+            //         if($firstCompetType != $secondCompetType){
+            //             $compet_type[] = $data->compet_type;
+            //             $firstCompetType = $data->compet_type;
+            //         }
+            //         if($i == sizeof($dataById)-1){
+                        // $actual = array(
+                        //     'id' => (int)$data->compet_id,
+                        //     'name'  => $data->name,
+                        //     'detail'  => $data->detail,
+                        //     'place'  => $data->place,
+                        //     'prize'  => $data->prize,
+                        //     'compet_start'  => $data->compet_start,
+                        //     'compet_end'  => $data->compet_end,
+                        //     'start'  => $data->start,
+                        //     'end'  => $data->end,
+                        //     'pay_end'  => $data->pay_end,
+                        //     'compet_type'  => $compet_type,
+                        //     'compet_gen'  => $compet_gen,   
+                        // );
+            //         }
+            //     }
+            //     $i = $i+1;
+            // }
         }
-        else{
-            echo "<script>alert('Can not found in Database')</script>";
-            redirect(base_url('staff/Competition'),'refresh');
-        }
+        // else{
+        //     echo "<script>alert('Can not found in Database')</script>";
+        //     redirect(base_url('staff/Competition'),'refresh');
+        // }
         echo json_encode($actual);
     }
 
