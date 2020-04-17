@@ -33,147 +33,112 @@ class Competition extends CI_Controller {
             'start'  => $start,
             'end'  => $end,
             'pay_end'  => $endPay,
-            'compet_type'  => 0,
             'compet_gen'  => 0,   
+            'auth' => 0,
+            'poster' => 0
             
         );
-        if(sizeof($compet_type) == 1){
-            if($compet_type[0] == 1){
-                foreach($compet_genY as $value){
-                    $data['compet_type'] = $compet_type[0];
-                    $data['compet_gen'] = $value;
-                    $this->competitions->insert($data);
-                }
-            }
-            else{
-                foreach($compet_genP as $value){
-                    $data['compet_type'] = $compet_type[0];
-                    $data['compet_gen'] = $value;
-                    $this->competitions->insert($data);
-                }
-            }
-            
-        }
-        else{
-            for($i = 0 ; $i < sizeof($compet_type) ; $i++){
-                if($compet_type[$i] == 1){
-                    foreach($compet_genY as $value){
-                        $data['compet_type'] = $compet_type[$i];
-                        $data['compet_gen'] = $value;
-                        $this->competitions->insert($data);
+        $valid = $this->competitions->searchCompetitionByName($name);
+
+        if(empty($valid)){
+            $this->competitions->insert($data);
+            $dataCompet = $this->competitions->searchCompetitionByName($name);
+            if($dataCompet != null){
+                foreach($compet_type as $valuetype){
+                    if($valuetype == 1){
+                        foreach($compet_genY as $valueGenY){
+                            $dataGen = array(
+                                'compet_id' => $dataCompet->compet_id,
+                                'type' => $valuetype,
+                                'gen' => $valueGenY
+                            );
+                            $this->competitions->insertCompetgen($dataGen);
+                        }
                     }
-                }
-                else{
-                    foreach($compet_genP as $value){
-                        $data['compet_type'] = $compet_type[$i];
-                        $data['compet_gen'] = $value;
-                        $this->competitions->insert($data);
+                    else{
+                        foreach($compet_genP as $valueGenP){
+                            $dataGen = array(
+                                'compet_id' => $dataCompet->compet_id,
+                                'type' => $valuetype,
+                                'gen' => $valueGenP
+                            );
+                            $this->competitions->insertCompetgen($dataGen);
+                        }
                     }
                 }
             }
+            echo "<script>alert('บันทึกข้อมูลเสร็จสิ้น')</script>";
+            redirect(base_url('staff/Competition'),'refresh');
         }
-       echo "<script>alert('บันทึกข้อมูลเสร็จสิ้น')</script>";
-       redirect(base_url('staff/Competition'),'refresh');
+        else {
+            echo "<script>alert('ชื่อการแข่งขันมีแล้ว')</script>";
+            redirect(base_url('staff/Competition/createCompetition'));
+        }
+       
     }
 
     public function allCompetation(){
         $data = $this->competitions->allCompetations();
         if($data != null){
-            $j = 0;
-            $sizeData = sizeof($data);
-            for($i = 0 ; $i < $sizeData ;$i=$i+1){
-                $compet_type =$data[$i]->compet_type;
-                $compet_gen = $data[$i]->compet_gen;
-                $compet_type_name = $this->competitions->searchType($compet_type);
-                $compet_gen = $this->competitions->searchGen($compet_gen);
-                if($i == 0){
-                    $type[] = $compet_type_name->name;
-                    if($compet_gen->type == 1){
-                        $gen1[] = $compet_gen->name;
+            foreach($data as $dataValue){
+                $compet_id = $dataValue->compet_id;
+                $dataGen = $this->competitions->searchGenCompetations($compet_id);
+                if($dataGen != null){
+                    $i = 0;
+                    foreach($dataGen as $value){
+                       if($value->type == 1){
+                        $gen= $this->competitions->searchGen($value->gen);
+                        $gen1[] = $gen->name;
+                       }
+                       else{
+                        $gen= $this->competitions->searchGen($value->gen);
+                        $gen2[] = $gen->name;
+                       }
+                        if($i == 0){
+                            $firstType = $value->type;
+                            $typeName = $this->competitions->searchType($value->type);
+                            $type[] = $typeName->name;
+                            $i=$i+1;
+                        }
+                        else{
+                            if($firstType != $value->type){
+                                $typeName = $this->competitions->searchType($value->type);
+                                $type[] = $typeName->name;
+                                
+                            }
+                            $firstType = $value->type;
+                            $i=$i+1;
+                        }
                     }
-                    else{
-                        $gen2[] = $compet_gen->name;
-                    }
-                    $a =$data[$i]->name;
-                    $firstType = $compet_type_name->name;
                 }
                 else{
-                    $b = $data[$i]->name;
-                    if($i == ($sizeData-1)){
-                        if($compet_gen->type == 1){
-                            $gen1[] = $compet_gen->name;
-                        }
-                        else{
-                            $gen2[] = $compet_gen->name;
-                        }
-                        $actual[] = array(
-                            'id' => (int)$data[$i]->compet_id,
-                            'name'  => $data[$i]->name,
-                            'detail'  => $data[$i]->detail,
-                            'place'  => $data[$i]->place,
-                            'prize'  => $data[$i]->prize,
-                            'compet_start'  => $data[$i]->compet_start,
-                            'compet_end'  => $data[$i]->compet_end,
-                            'start'  => $data[$i]->start,
-                            'end'  => $data[$i]->end,
-                            'pay_end'  => $data[$i]->pay_end,
-                            'compet_type'  => $type,
-                            'compet_gen1'  => $gen1,   
-                            'compet_gen2'  => $gen2,  
-                        ); 
-                        $type = null;
-                        $gen1 = null;
-                        $gen2 = null;
-                        
-                    }
-                    else{
-                        if($a == $b){
-                            $endType = $compet_type_name->name;
-                            if($firstType != $endType){
-                                $type[] = $compet_type_name->name;
-                            }
-                            $firstType = $compet_type_name->name;
-                            if($compet_gen->type == 1){
-                                $gen1[] = $compet_gen->name;
-                            }
-                            else{
-                                $gen2[] = $compet_gen->name;
-                            }
-                        }
-                        else{
-                            $actual[] = array(
-                                'id' => (int)$data[$i-1]->compet_id,
-                                'name'  => $data[$i-1]->name,
-                                'detail'  => $data[$i-1]->detail,
-                                'place'  => $data[$i-1]->place,
-                                'prize'  => $data[$i-1]->prize,
-                                'compet_start'  => $data[$i-1]->compet_start,
-                                'compet_end'  => $data[$i-1]->compet_end,
-                                'start'  => $data[$i-1]->start,
-                                'end'  => $data[$i-1]->end,
-                                'pay_end'  => $data[$i-1]->pay_end,
-                                'compet_type'  => $type,
-                                'compet_gen1'  => $gen1,   
-                                'compet_gen2'  => $gen2,   
-                            ); 
-                            $type = null;
-                            $gen1 = null;
-                            $gen2 = null;
-                            $type[] = $compet_type_name->name;
-                            if($compet_gen->type == 1){
-                                $gen1[] = $compet_gen->name;
-                            }
-                            else{
-                                $gen2[] = $compet_gen->name;
-                            }
-                            $a =$data[$i]->name;
-                            $firstType = $compet_type_name->name;
-                            }
-                    }
-                    
+                    echo "<script>alert('ไม่มีข้อมูลรุ่นอายุบางการแข่งขันนี้ใน Database')</script>";
                 }
-                
-                
+                if(empty($gen)){
+                    $gen1[] = "";
+                }
+                if( empty($gen2)){
+                    $gen2[] = "";
+                }
+                $actual[] = array(
+                    'id' => (int)$dataValue->compet_id,
+                    'name'  => $dataValue->name,
+                    'detail'  => $dataValue->detail,
+                    'place'  => $dataValue->place,
+                    'prize'  => $dataValue->prize,
+                    'compet_start'  => $dataValue->compet_start,
+                    'compet_end'  => $dataValue->compet_end,
+                    'start'  => $dataValue->start,
+                    'end'  => $dataValue->end,
+                    'pay_end'  => $dataValue->pay_end,
+                    'compet_type'  => $type,
+                    'compet_gen1'  => $gen1,   
+                    'compet_gen2'  => $gen2,   
+                ); 
+                $type =null;
+                $gen1=null;
+                $gen2=null;
+
             }
             echo json_encode($actual);
         }
@@ -181,17 +146,18 @@ class Competition extends CI_Controller {
             echo "<script>alert('ไม่มีข้อมูลใน Database')</script>";
             redirect(base_url('staff/Competition'),'refresh');
         }
+        
+        // echo "<script>alert('ไม่มีข้อมูลใน Database')</script>";
+        //     redirect(base_url('staff/Competition'),'refresh');
     }
     public function delete($id){
-        $datafindName = $this->competitions->searchCompetitionById($id);
-        if($datafindName != null){
-            $data = $this->competitions->searchCompetitionByName($datafindName->name);
-            for($i = 0 ; $i < sizeof($data) ; $i++){
-                $idCom = $data[$i]->compet_id;
-                $name = $data[$i]->compet_gen;
-                $this->competitions->delete($idCom,$name);
-                
+        $datafindid = $this->competitions->searchCompetitionById($id);
+        if($datafindid != null){
+            $data = $this->competitions->searchGenCompetations($datafindid->compet_id);
+            foreach($data as $dataGen){
+                $this->competitions->deleteCompetitionGen($dataGen->id);
             }
+            $this->competitions->deleteCompetition($datafindid->compet_id);
             echo "<script>alert('ลบแล้ว')</script>";
         }   
         redirect(base_url('staff/Competition'),'refresh');

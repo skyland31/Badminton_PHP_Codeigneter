@@ -82,24 +82,6 @@
 
                 <a href="<?php echo base_url('api/Competition/delete/'.$value->id) ?>" onclick = "return confirm('Are you want delete Competition this?');" type="button" class="btn btn-danger"  id="delete">ลบ</a>
 
-                <!-- Modal -->
-                <!-- <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                  <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title" id="myModalLabel">ลบการแข่งขัน </h4>
-                      </div>
-                      <div class="modal-body">
-                      <p>คุณต้องการลบการแข่งขันหรือไม่ </p>
-                      </div>
-                      <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">ยกเลิก</button>
-                        <a href="#" type="button" class="btn btn-danger">ลบ</a>
-                      </div>
-                    </div>
-                  </div>
-                </div> -->
 
                 <a href="<?php echo base_url('staff/Grouptable/index') ?>" type="button" class="btn btn-default">ตารางแบ่งกลุ่ม</a>
               </div>
