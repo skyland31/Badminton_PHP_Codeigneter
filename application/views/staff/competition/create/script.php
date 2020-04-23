@@ -1,6 +1,5 @@
 <script>
   $(function () {
-    
     $('#create-compet').validate({
       rules:{
         'name': "required",
@@ -11,7 +10,6 @@
         'end': "required",
         'payCost': "required",
         'endPay': "required",
-
       },
       messages:{
         'name': "กรอกชื่อการแข่งขัน",
@@ -22,17 +20,23 @@
         'end': "กรอกวันปิดรับสมัคร",
         'payCost': "กรอกค่าสมัคร",
         'endPay': "กรอกวันสิ้นสุดการจ่ายเงิน",
-
       }
-
     });
-
   });
+
   $('.datepicker').datepicker({
-    startDate: '-3d'
+    startDate: '0d',
+    minDate: moment().add('d', 1).toDate()
   });
 
-  // ---------------------------------------
+  function addDays(date, days) {
+    var result = new Date(date);
+    result.setDate(result.getDate() + days);
+    return result;
+  }
+
+  $(document).ready(function () {
+
     $("#comEnd").hide();
     $("#comRegisEnd").hide();
 
@@ -45,6 +49,7 @@
         $("#comRegisEnd").hide();
       }
     });
+    
     $("#compet_start").change(function (e) { 
       e.preventDefault();
       if($("#compet_start").val() != null){
@@ -54,9 +59,25 @@
         $("#comEnd").hide();
       }
     });
-// ----------------------------------------------------------
+    
+    
 
-//-----------------------function--------------------------------- 
+    $("#start").datepicker('setStartDate, setMinDate').on('changeDate', function (selected) {
+      var end_date = new Date(selected.date.valueOf()); //date end of register
+      
+      $('#end').datepicker('setStartDate', addDays(end_date,1) ).on('changeDate', function (selected){
+        var end_pay = new Date(selected.date.valueOf());
+        $('#endPay').datepicker('setStartDate', end_pay);
+
+        $('#compet_start').datepicker('setStartDate', addDays(end_pay, 1)).on('changeDate', function (selected) {
+          var compet_end = new Date(selected.date.valueOf());
+          $('#compet_end').datepicker('setStartDate', compet_end);
+        })
+      })
+      
+    });
+
+});
 
 </script>
 
