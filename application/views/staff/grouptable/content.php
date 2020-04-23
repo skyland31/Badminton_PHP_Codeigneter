@@ -89,7 +89,7 @@
             <div class="col-md-6">
                 <div class="box">
                     <div class="box-header border-box-bottom">
-                        <h3 id="compet-group">Group A</h3>
+                        <h3 id="compet-group">Group B</h3>
                     </div>
                     
                     <table class="table">
@@ -102,8 +102,8 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>A1</td>
-                                <td>WU1</td>
+                                <td>B1</td>
+                                <td>WU4</td>
                                 <td>
                                     <table class="table">
                                         <tr>
@@ -118,8 +118,8 @@
                         </tbody>
                         <tbody>
                             <tr>
-                                <td>A2</td>
-                                <td>WU2</td>
+                                <td>B2</td>
+                                <td>WU5</td>
                                 <td>
                                     <table class="table">
                                         <tr>
@@ -134,8 +134,8 @@
                         </tbody>
                         <tbody>
                             <tr>
-                                <td>A3</td>
-                                <td>WU3</td>
+                                <td>B3</td>
+                                <td>WU6</td>
                                 <td>
                                     <table class="table">
                                         <tr>
@@ -158,6 +158,11 @@
         
         <!-- type s- -->
         <div class= "row">
+            <div class="col-md-12">
+            <h1>ประเภทมือ S- </h1>
+            </div>
+        </div>
+        <div class= "row">
             <div class="col-md-6">
                 <div class="box">
                     <div class="box-header border-box-bottom">
@@ -175,7 +180,7 @@
                         <tbody>
                             <tr>
                                 <td>A1</td>
-                                <td>WU1</td>
+                                <td>WU7</td>
                                 <td>
                                     <table class="table">
                                         <tr>
@@ -191,7 +196,7 @@
                         <tbody>
                             <tr>
                                 <td>A2</td>
-                                <td>WU2</td>
+                                <td>WU8</td>
                                 <td>
                                     <table class="table">
                                         <tr>
@@ -207,7 +212,7 @@
                         <tbody>
                             <tr>
                                 <td>A3</td>
-                                <td>WU3</td>
+                                <td>WU9</td>
                                 <td>
                                     <table class="table">
                                         <tr>
@@ -230,7 +235,7 @@
             <div class="col-md-6">
                 <div class="box">
                     <div class="box-header border-box-bottom">
-                        <h3 id="compet-group">Group A</h3>
+                        <h3 id="compet-group">Group B</h3>
                     </div>
                     
                     <table class="table">
@@ -243,8 +248,8 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>A1</td>
-                                <td>WU1</td>
+                                <td>B1</td>
+                                <td>WU10</td>
                                 <td>
                                     <table class="table">
                                         <tr>
@@ -259,8 +264,8 @@
                         </tbody>
                         <tbody>
                             <tr>
-                                <td>A2</td>
-                                <td>WU2</td>
+                                <td>B2</td>
+                                <td>WU11</td>
                                 <td>
                                     <table class="table">
                                         <tr>
@@ -275,8 +280,8 @@
                         </tbody>
                         <tbody>
                             <tr>
-                                <td>A3</td>
-                                <td>WU3</td>
+                                <td>B3</td>
+                                <td>WU12</td>
                                 <td>
                                     <table class="table">
                                         <tr>
