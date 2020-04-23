@@ -38,5 +38,6 @@ class Competition extends BD_Controller {
 		$this->load->view('staff/competition/edit/content',$data);
 		$this->load->view('staff/layout/footer');
 		$this->load->view('staff/layout/foot');
+		$this->load->view('staff/competition/edit/script');
 	}
 }

@@ -4,7 +4,7 @@
     <!-- Content Header (Page header) -->
   <section class="content-header">
     <h1>
-      สร้างการแข่งขัน
+      แก้ไขรายการการแข่งขัน
       <small>walailak university</small>
     </h1>
   </section>
@@ -39,23 +39,12 @@
               <br>
               <div class="row">
                 <div class="col-md-6">
-                  <label for="start">วันที่เปิดรับสมัคร<sup class="error">*</sup><small>(01/01/2556)</small></label>
-                  <input type="text" class ="datepicker" value='<?php echo $obj->start?>' data-date-format="yyyy-mm-dd" class="form-control error" name="start" id="start" placeholder="วว/ดด/ปปปป" required>
+                  <label for="start">วันที่เปิดรับสมัคร<sup class="error">*</sup></label>
+                  <input type="text" class ="datepicker" data-date-format="yyyy-mm-dd" value="<?php echo $obj->start?>" class="form-control error" name="start" id="start" placeholder="วว/ดด/ปปปป" required>
                 </div>
                 <div class="col-md-6" id ="comRegisEnd">
-                  <label for="end">วันที่ปิดรับสมัคร<sup class="error">*</sup><small>(01/02/2556)</small></label>
+                  <label for="end">วันที่ปิดรับสมัคร<sup class="error">*</sup></label>
                   <input type="text" class ="datepicker" value='<?php echo $obj->end?>' data-date-format="yyyy-mm-dd" class="form-control error" name="end" id="end" placeholder="วว/ดด/ปปปป" required>
-                </div>
-              </div>
-              <br>
-              <div class="row">
-                <div class="col-md-6">
-                  <label for="compet_start">วันที่เริ่มการแข่งขัน<sup class="error">*</sup> <small>(01/01/2556)</small></label>
-                    <input type="text" class ="datepicker" value='<?php echo $obj->compet_start?>' data-date-format="yyyy-mm-dd" class="form-control error" name="compet_start" id="compet_start" placeholder="วว/ดด/ปปปป" required>
-                </div>
-                <div class="col-md-6" id ="comEnd">
-                  <label for="compet_end">วันที่สุดการแข่งขัน<sup class="error">*</sup> <small>(01/01/2556)</small></label>
-                    <input type="text"class ="datepicker" value='<?php echo $obj->compet_end?>' data-date-format="yyyy-mm-dd" class="form-control error" name="compet_end" id="compet_end" placeholder="วว/ดด/ปปปป" required>
                 </div>
               </div>
               <br>
@@ -65,8 +54,19 @@
                   <input type="text" class="form-control error" value='<?php echo $obj->prize?>' name="payCost" id="payCost" placeholder="จำนวนเงิน" required>
                 </div>      
               <div class="col-md-6">
-                  <label for="startPay">วันที่สิ้นสุดจ่ายเงิน<sup class="error">*</sup><small>(01/02/2556)</small></label>
+                  <label for="startPay">วันที่สิ้นสุดจ่ายเงิน<sup class="error">*</sup></label>
                   <input type="text" class ="datepicker" value='<?php echo $obj->pay_end?>' data-date-format="yyyy-mm-dd" class="form-control error" name="endPay" id="endPay" placeholder="วว/ดด/ปปปป" required>
+                </div>
+              </div>
+              <br>
+              <div class="row">
+                <div class="col-md-6">
+                  <label for="compet_start">วันที่เริ่มการแข่งขัน<sup class="error">*</sup></label>
+                    <input type="text" class ="datepicker" value='<?php echo $obj->compet_start?>' data-date-format="yyyy-mm-dd" class="form-control error" name="compet_start" id="compet_start" placeholder="วว/ดด/ปปปป" required>
+                </div>
+                <div class="col-md-6" id ="comEnd">
+                  <label for="compet_end">วันที่สุดการแข่งขัน<sup class="error">*</sup></label>
+                    <input type="text"class ="datepicker" value='<?php echo $obj->compet_end?>' data-date-format="yyyy-mm-dd" class="form-control error" name="compet_end" id="compet_end" placeholder="วว/ดด/ปปปป" required>
                 </div>
               </div>
               <br>

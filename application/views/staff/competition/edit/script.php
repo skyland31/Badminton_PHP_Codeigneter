@@ -37,31 +37,6 @@
 
   $(document).ready(function () {
 
-    $("#comEnd").hide();
-    $("#comRegisEnd").hide();
-
-    $("#start").change(function (e) { 
-      e.preventDefault();
-      if($("#start").val() != null){
-        $("#comRegisEnd").show();
-      }
-      if($("#start").val() == ""){
-        $("#comRegisEnd").hide();
-      }
-    });
-    
-    $("#compet_start").change(function (e) { 
-      e.preventDefault();
-      if($("#compet_start").val() != null){
-        $("#comEnd").show();
-      }
-      if($("#compet_start").val() == ""){
-        $("#comEnd").hide();
-      }
-    });
-    
-    
-
     $("#start").datepicker('setStartDate, setMinDate').on('changeDate', function (selected) {
       var end_date = new Date(selected.date.valueOf()); //date end of register
       
