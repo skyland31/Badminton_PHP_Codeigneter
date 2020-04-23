@@ -32,8 +32,7 @@ class Competition extends CI_Controller {
             'compet_end'  => $compet_end,
             'start'  => $start,
             'end'  => $end,
-            'pay_end'  => $endPay,
-            'compet_gen'  => 0,   
+            'pay_end'  => $endPay, 
             'auth' => 0,
             'poster' => 0
             
@@ -200,42 +199,7 @@ class Competition extends CI_Controller {
                 'compet_type'  => $compet_type,
                 'compet_gen'  => $compet_gen,   
             );
-            // foreach($dataById as $data){
-            //     $compet_gen[] = $data->compet_gen;
-            //     if($i == 0){
-            //         $firstCompetType = $data->compet_type;
-            //         $compet_type[] = $data->compet_type;
-            //     }
-            //     else{
-            //         $secondCompetType = $data->compet_type;
-            //         if($firstCompetType != $secondCompetType){
-            //             $compet_type[] = $data->compet_type;
-            //             $firstCompetType = $data->compet_type;
-            //         }
-            //         if($i == sizeof($dataById)-1){
-                        // $actual = array(
-                        //     'id' => (int)$data->compet_id,
-                        //     'name'  => $data->name,
-                        //     'detail'  => $data->detail,
-                        //     'place'  => $data->place,
-                        //     'prize'  => $data->prize,
-                        //     'compet_start'  => $data->compet_start,
-                        //     'compet_end'  => $data->compet_end,
-                        //     'start'  => $data->start,
-                        //     'end'  => $data->end,
-                        //     'pay_end'  => $data->pay_end,
-                        //     'compet_type'  => $compet_type,
-                        //     'compet_gen'  => $compet_gen,   
-                        // );
-            //         }
-            //     }
-            //     $i = $i+1;
-            // }
         }
-        // else{
-        //     echo "<script>alert('Can not found in Database')</script>";
-        //     redirect(base_url('staff/Competition'),'refresh');
-        // }
         echo json_encode($actual);
     }
 
