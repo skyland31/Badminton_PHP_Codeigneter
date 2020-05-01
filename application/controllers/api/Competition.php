@@ -38,7 +38,6 @@ class Competition extends CI_Controller {
             
         );
         $valid = $this->competitions->searchCompetitionByName($name);
-
         if(empty($valid)){
             $this->competitions->insert($data);
             $dataCompet = $this->competitions->searchCompetitionByName($name);
@@ -68,11 +67,11 @@ class Competition extends CI_Controller {
             }
             echo "<script>alert('บันทึกข้อมูลเสร็จสิ้น')</script>";
             redirect(base_url('staff/Competition'),'refresh');
+            
         }
-        else {
-            echo "<script>alert('ชื่อการแข่งขันมีแล้ว')</script>";
-            redirect(base_url('staff/Competition/createCompetition'));
-        }
+        echo "<script>alert('ชื่อการแข่งขันมีแล้ว')</script>";
+        redirect(base_url('staff/Competition/createCompetition'),'refresh');
+        
        
     }
 
