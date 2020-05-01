@@ -261,6 +261,12 @@ class Competition extends CI_Controller {
                 echo "<script>alert('บันทึกข้อมูลเสร็จสิ้น')</script>";
                 redirect(base_url('staff/Competition'),'refresh');
             } 
+            else{
+                echo "<script>alert('ไม่พบข้อมูลรุ่นอายุของการแข่งขันนี้')</script>";
+            }
+        }
+        else{
+            echo "<script>alert('ไม่พบข้อมูลของการแข่งขันนี้')</script>";
         }
     }
 
