@@ -203,6 +203,7 @@ class Competition extends CI_Controller {
     }
 
     public function update(){
+        $id = $this->input->post('id');
         $name = $this->input->post('name');
         $compet_start = $this->input->post('compet_start');
         $compet_end = $this->input->post('compet_end');
@@ -216,6 +217,7 @@ class Competition extends CI_Controller {
         $compet_genY = $this->input->post('compet_genY');
         $compet_genP = $this->input->post('compet_genP');
         $data = array(
+            'id' => $id,
             'name'  => $name,
             'detail'  => $detail,
             'place'  => $palce,
@@ -224,11 +226,42 @@ class Competition extends CI_Controller {
             'compet_end'  => $compet_end,
             'start'  => $start,
             'end'  => $end,
-            'pay_end'  => $endPay,
-            'compet_type'  => 0,
-            'compet_gen'  => 0,   
+            'pay_end'  => $endPay, 
             
         );
+        $compet_gen = [];
+        $valid = $this->competitions->searchCompetitionById($id);
+        if($valid != null){
+            foreach($compet_genY as $genY){
+                $gen = $this->competitions->searchGen($genY);
+                $compet_gen[] = array(
+                    'compet_id' => $id,
+                    'type' => $gen->type,
+                    'gen' => $gen->gen_id
+
+                );
+            }
+            foreach($compet_genP as $genP){
+                $gen = $this->competitions->searchGen($genP);
+                $compet_gen[] = array(
+                    'compet_id' => $id,
+                    'type' => $gen->type,
+                    'gen' => $gen->gen_id
+
+                );
+            }
+            $data = $this->competitions->searchGenCompetations($id);
+            if($data != null){
+                foreach($data as $dataGen){
+                    $this->competitions->deleteCompetitionGen($dataGen->id);
+                }
+                foreach($compet_gen as $data){
+                    $this->competitions->insertCompetgen($data);
+                }
+                echo "<script>alert('บันทึกข้อมูลเสร็จสิ้น')</script>";
+                redirect(base_url('staff/Competition'),'refresh');
+            } 
+        }
     }
 
 }

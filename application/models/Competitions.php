@@ -26,7 +26,6 @@ class Competitions extends CI_Model {
         return $result->row();
     }
     function searchGen($gen){
-        $this->db->select("name");
         $this->db->from("generation");
         $this->db->where("gen_id = ".$gen);
         $result = $this->db->get();
@@ -52,7 +51,7 @@ class Competitions extends CI_Model {
         return $result->row();
     }
     //------------------------------------------------
-    function update($data){
+    function updateCompetition($data){
         $this->db->where('compet_id', $data['compet_id']);
         $result = $this->db->update('competition', $data);
         return $result;
