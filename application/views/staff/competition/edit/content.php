@@ -20,7 +20,7 @@
               $obj = json_decode($json);
               //echo "<script> alert(".$obj->id."); </script>"
             ?>
-          <form role="form" id="create-compet" action="<?php echo base_url('api/competition/update'); ?>" method="post">
+          <form role="form" id="update-compet" action="<?php echo base_url('api/competition/update'); ?>" method="post">
           <input type="hidden" id="id" name="id" value="<?php echo $id ?>">
             <div class="box-body">
               <div class="row">

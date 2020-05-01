@@ -1,6 +1,6 @@
 <script>
   $(function () {
-    $('#create-compet').validate({
+    $('#update-compet').validate({
       rules:{
         'name': "required",
         'compet_start': "required",
