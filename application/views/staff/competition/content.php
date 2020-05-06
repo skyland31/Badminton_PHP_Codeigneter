@@ -24,9 +24,10 @@
           <div class="col-md-6">
             <div class="box">
               <div class="box-header border-box-bottom" id="compet-name">
-                <h3><?php echo $value->name?></h3>
+                <!-- <input type="hidden" name="nameCompetition" id="nameCompetition" value="<?php echo  $value->name ?>"> -->
+                <h3 id="nameCompetition"><?php echo $value->name?></h3>
               </div>
-              <div class="box-body" id="compet-detail">
+              <div class="box-body" id="compet">
               <?php echo "<strong> เปิดรับประเภท :  </strong>";
               if($value->compet_type != null){
                 for($j = 0 ; $j < sizeof($value->compet_type) ;$j++){
@@ -59,24 +60,10 @@
                 <br>
                 <strong> สิ้นสุดจ่ายค่าสมัคร : </strong><p class="detail" id="pay-end"><?php echo $value->pay_end ?></p>
                 <br><br>
-                <a href="#" type="button" class="btn btn-primary" data-toggle="modal" data-target="#desciptionModal">รายละเอียด</a>
-                <!-- Modal -->
-                <div class="modal fade" id="desciptionModal" tabindex="-1" role="dialog" aria-labelledby="desciption">
-                  <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title" id="desciption">รายละเอียด <?php echo $value->name ?></h4>
-                      </div>
-                      <div class="modal-body">
-                      <p><?php echo $value->detail ?></p>
-                      </div>
-                      <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">ปิด</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <input type="hidden" name="detailCompetition" id="detailCompetition" value="<?php echo  $value->detail ?>">
+                <a href="#" type="button" class="btn btn-primary" name="detailComs" id="detailCom" >รายละเอียด</a>
+                <a  type="button" class="btn btn-primary" data-id="<?php echo $value->detail ?>" name="detailCom" id="detailCom" data-toggle="modal" data-target="#desciptionModal">รายละเอียด</a >
+                
 
                 <a href="<?php echo base_url('staff/Competition/editCompetition/'.$value->id) ?>" type="button" class="btn btn-warning">แก้ไข</a>
 
@@ -93,7 +80,24 @@
         <?php 
           }
         }?>
-        
+        <!-- Modal -->
+        <div class="modal fade" id="desciptionModal" tabindex="-1" role="dialog" aria-labelledby="desciption">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h4 class="modal-title">รายละเอียด </h4>
+                  <h4 class="modal-title" id="nameCompetdesciption"></h4>
+                </div>
+                <div class="modal-body">
+                  <p id="madal-desciption"><?php echo $value->detail ?></p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">ปิด</button>
+                </div>
+              </div>
+            </div>
+        </div>
       </div>
 
     </section>
