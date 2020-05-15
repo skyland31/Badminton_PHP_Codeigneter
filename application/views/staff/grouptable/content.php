@@ -8,6 +8,7 @@
         <li class="active">ตารางการจัดคู่</li>
       </ol>
     </section>
+    <a href="<?php echo base_url('api/Grouptable/showgroupTable/'.$compet_id) ?>" type="button" class="btn btn-primary">Json Competetion</a>
     <!-- Main content -->
     <section class="content">
         <div class= "row">
@@ -26,7 +27,7 @@
                     <table class="table">
                         <thead>
                             <tr>
-                                <th>กลุ่ม</th>
+                                <th>ทีม</th>
                                 <th>สังกัด</th>
                                 <th>ชื่อ-นามสกุล</th>
                             </tr>

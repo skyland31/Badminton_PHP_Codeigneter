@@ -61,7 +61,6 @@
                 <strong> สิ้นสุดจ่ายค่าสมัคร : </strong><p class="detail" id="pay-end"><?php echo $value->pay_end ?></p>
                 <br><br>
                 <input type="hidden" name="detailCompetition" id="detailCompetition" value="<?php echo  $value->detail ?>">
-                <a href="#" type="button" class="btn btn-primary" name="detailComs" id="detailCom" >รายละเอียด</a>
                 <a  type="button" class="btn btn-primary" data-id="<?php echo $value->detail ?>" name="detailCom" id="detailCom" data-toggle="modal" data-target="#desciptionModal">รายละเอียด</a >
                 
 
@@ -70,7 +69,7 @@
                 <a href="<?php echo base_url('api/Competition/delete/'.$value->id) ?>" onclick = "return confirm('Are you want delete Competition this?');" type="button" class="btn btn-danger"  id="delete">ลบ</a>
 
 
-                <a href="<?php echo base_url('staff/Grouptable/index') ?>" type="button" class="btn btn-default">ตารางแบ่งกลุ่ม</a>
+                <a href="<?php echo base_url('staff/Grouptable/index/'.$value->id) ?>" type="button" class="btn btn-default">ตารางแบ่งกลุ่ม</a>
               </div>
               <div class="box-footer border-box-top">
                 Post By : <p class="detail" id="auth">Admin</p> 

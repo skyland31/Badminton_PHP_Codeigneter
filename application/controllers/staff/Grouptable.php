@@ -7,12 +7,13 @@ class Grouptable extends BD_Controller {
         parent::__construct();
 	}
 
-	public function index()
+	public function index($compet_id)
 	{
+		$data['compet_id'] = $compet_id;
 		$this->load->view('staff/layout/head');
 		$this->load->view('staff/layout/header');
 		$this->load->view('staff/layout/left-menu');
-		$this->load->view('staff/grouptable/content');
+		$this->load->view('staff/grouptable/content',$data);
 		$this->load->view('staff/layout/footer');
 		$this->load->view('staff/layout/foot');
 	}
